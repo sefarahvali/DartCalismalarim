@@ -1,0 +1,46 @@
+main(List<String> args) {
+  // değer alma - get , değer atama - set
+  // tek satırda bilgileri girmek istiyorsak - parametreli kurucu constructor kullanılır.
+  var sefa = Ogrenci(54,"Sefa",true);
+  
+  print(sefa.ad); //get
+  sefa.ad = "RIFAT"; //set
+  sefa.ogrenciNoAta = 32;
+  print("öğrenci numarası oku : ${sefa.ogrenciNoOku}");
+  
+  sefa.bilgileriYazdir();
+}
+
+class Ogrenci {
+    
+  int _ogrNo; //Instance - Field Variable
+  String ad; // genel özellikleri.
+  bool erkekMi;
+  
+  Ogrenci(this._ogrNo,this.ad ,this.erkekMi){ // Parametreli Constructor   
+    print("Öğrenci sınıfından temiz kod olarak bir nesne üretiliyor.");
+  }
+  
+  void set ogrenciNoAta(int no){
+    if(no <= 0){
+      this._ogrNo = 1;
+    }else{
+      this._ogrNo = no;
+    }
+  }
+  /*
+  Object get ogrenciNoOku{ //object yerine int , string, ... yazılabilir.
+    return ogrNo;
+  }*/
+  
+  Object get ogrenciNoOku => "Oku 2 : {$_ogrNo}";
+  void dersCalis(){ // eylem bildirici yapı gibi düşünebiliriz.
+  }
+  void uyu(){}
+  
+  void bilgileriYazdir(){
+    print("Öğrenci Numarası  : ${this._ogrNo}");
+    print("Öğrenci Adı       : ${this.ad}");
+    print("Öğrenci Cinsiyeti : ${this.erkekMi}");
+ }    
+}
