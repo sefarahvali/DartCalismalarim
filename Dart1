@@ -1,0 +1,49 @@
+main(List<String> args) {
+  print("Sefa RAHVALI");
+  print(5 + 6);
+
+  //veri tipleri
+
+  String isim = "Sefa";
+  String soyisim = "Rahvalı";
+
+  print("İsim : " + isim + "\n" + "Soyisim : " + soyisim);
+  print("interpolation :  $isim , $soyisim");
+  print("kakrakter sayısı : ${isim.length}");
+  print("kakrakter sayısı : ${soyisim.length}");
+
+  num a = isim.length;
+  num b = soyisim.length;
+  print(a + b);
+  if (a > b) {
+    print('b');
+  }
+
+  var c = a > b ? "a kücük" : "b büyük";
+  print(c);
+
+  String ad;
+  String soyad = "R";
+
+  // ?? null mu değilmi ?
+
+  var mesaj = ad ?? soyad;
+  print(mesaj);
+
+  for (var i = 0; i < 5; i++) {
+    print("sss");
+  }
+
+  cccc();
+  
+  print("Çarpım : " + carp(3,5).toString());
+}
+
+cccc() {
+  int en = 8, boy = 12;
+  var cc = (en + boy) * 2;
+  print(cc);
+  
+}
+
+int carp(int a , int b)=> a*b;
