@@ -1,0 +1,77 @@
+main(List<String> args) {
+  //Kurucu metotlar - constructor
+  //bir sınıftan nesne üretildiğinde tetiklenen metotlar.
+  //nesneyi kullanılabilir hale getirebildiğimiz metotlardır.
+  
+  //Overloading - aynı isimli ancak farklı parametreli metotlardır. - dart'ta kullanılmıyor.
+  
+  var sefa = Ogrenci(10,"Sefa",true); // bu kısmı yazmadan tetiklenirler.
+  //parametre almayan nesnelerde default constructor çalışır.
+  
+  sefa.bilgileriYazdir();
+  
+  //tek satırda bilgileri girmek istiyorsak - parametreli kurucu constructor kullanılır.
+ 
+   var rifat = Ogrenci(54,"Rıfat",true);
+  rifat.bilgileriYazdir();
+  
+  var cinsiyetsizKisi = Ogrenci.cinsiyetBilgisiOlmayanKurucu(5,"Asuman"); 
+  cinsiyetsizKisi.bilgileriYazdir();
+  
+  var cinsiyetiOlan = Ogrenci.cinsiyetBilgisiOlanKurucu(7,"Ali",true);
+  cinsiyetiOlan.bilgileriYazdir();
+}
+
+class Ogrenci {
+    
+  int ogrNo; //Instance - Field Variable
+  String ad; // genel özellikleri.
+  bool erkekMi;
+  
+  /*Ogrenci(){ // Constructor - ikisinden birini kullanacağız.
+    //ilk önce bu metot çalışır.
+    print("Öğrenci sınıfından bir nesne üretiliyor.");
+  }*/
+  //Ogrenci(int no ,String ad,bool   cinsiyet){ // Parametreli Constructor
+  /*Ogrenci(Object no,Object ad,Object cinsiyet){ // Parametreli Constructor  
+    this.ogrNo = no;
+    this.ad = ad;
+    this.erkekMi = cinsiyet;
+    
+    print("Öğrenci sınıfından bir nesne üretiliyor.");
+    
+  }*/
+  
+  Ogrenci(this.ogrNo,this.ad ,this.erkekMi){ // Parametreli Constructor  
+        
+    print("Öğrenci sınıfından temiz kod olarak bir nesne üretiliyor.");
+    
+  }
+  
+  //named - sınıf içerisinde bu metot constructor gibi çalışıyor.
+  Ogrenci.cinsiyetBilgisiOlmayanKurucu(int no , String ad ){
+    print("Öğrenci sınıfından named contructor olarak bir nesne üretiliyor.");
+    this.ogrNo = no;
+    this.ad = ad;
+  }
+  Ogrenci.cinsiyetBilgisiOlanKurucu(this.ogrNo, this.ad, this.erkekMi){
+    print("Öğrenci sınıfından named contructor olarak temiz kod ile bir nesne üretiliyor.");
+  }
+    
+  void dersCalis(){ // eylem bildirici yapı gibi düşünebiliriz.
+    
+  }
+  void uyu(){
+    
+  }
+  
+  void bilgileriYazdir(){
+    print("Öğrenci Numarası  : ${this.ogrNo}");
+    print("Öğrenci Adı       : ${this.ad}");
+    print("Öğrenci Cinsiyeti : ${this.erkekMi}");
+  }
+  
+    
+  }
+
+
