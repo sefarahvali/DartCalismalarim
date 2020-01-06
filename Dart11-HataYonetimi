@@ -1,0 +1,61 @@
+main(List<String> args) {
+  // int a = 10 , b=20 , result;
+  int a = 10 , b=0 , result;
+  
+  //yuvarlar
+  // result = a ~/ b; 
+  // print(result);
+
+  //Uygulama çökmesi yerine - IntegerDivisionByZeroException hatasını aldık.
+  // try { // Bölmeyi dene
+  //   result = a ~/ b;
+  //   print(result);
+  // } catch (e) {
+  //   print(e);
+  // }
+
+  // Hata çeşitleri
+  try { // Bölmeyi dene
+    result = a ~/ b;
+    print(result);
+  }on IntegerDivisionByZeroException catch (e) { // hata IntegerDivision... ise e yi yazdır.
+    print(e);
+  }on FormatException catch(e){ //değilse
+    print(e);
+  }catch(e){ //öngörülemeyen hatalarda sadece catch
+    print(e);
+  }finally{//ister hata olsun olmasın bu blok yinede devreye girer.
+    print("Her durumda çalışır.");
+  } 
+
+  try {
+    setAge(12);
+  } catch (e) {
+    print(e);
+  }
+  
+  try {
+    calculate(100);
+  } on RuleException catch (e) {
+    print(e.errorMessage());
+  }
+  
+
+}
+
+void setAge(int age){
+  if(age<13){
+    throw new Exception("Yaşınız 13'ten büyük olmalıdır");
+  }
+}
+
+//uygulamamıza göre özel Exception oluşturmak istersek.
+class RuleException implements Exception {
+  String errorMessage()=> 'Kural hatası oluştu.';
+}
+
+void calculate(double amount){
+  if (amount<1000) {
+    throw new RuleException();
+  }
+}
