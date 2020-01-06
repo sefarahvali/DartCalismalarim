@@ -1,0 +1,46 @@
+main(List<String> args) {
+  // OOP : objelerin nesnelerin olayların gerçek hayata uyarlamasıdır.
+  
+  // sınıftan oluşturacağımız tür (örnek) instance - nesnedir.
+  
+  //Ogrenciden nesne üretelim
+  
+  
+  //Ogrenci sefa = new Ogrenci();
+    
+  Ogrenci sefa = Ogrenci();
+  
+  var rifat = Ogrenci();
+  
+  //Değer atamazsak null döndürür.
+  rifat.ogrNo = 1;
+  rifat.ad = "Sefa";
+  rifat.erkekMi = true;
+  rifat.bilgileriYazdir();
+  
+  
+}
+
+class Ogrenci {
+    
+    int ogrNo; // Instance - Field Variable
+    String ad;
+    bool erkekMi;
+    
+  
+  void dersCalis(){ // eylem bildirici yapı gibi düşünebiliriz.
+    
+  }
+  void uyu(){
+    
+  }
+  
+  void bilgileriYazdir(){
+    // this -> o an bilgileri yazdırmak istediğimiz , temsilci
+    // oluşturulan bütün nesnenin özelliklerini temsil edecek.
+    print("Öğrenci Numarası  : ${this.ogrNo}");
+    print("Öğrenci Adı       : ${this.ad}");
+    print("Öğrenci Cinsiyeti : ${this.erkekMi}");
+  }
+    
+  }
