@@ -1,0 +1,49 @@
+main(List<String> args) {
+  //Polimorfizm - bir çok şekil anlamına gelir.
+  
+  Er rifat = Er();
+  Er sefa = Er();
+  Asker asker = Asker();
+  Yuzbasi ali = Yuzbasi();
+
+  hazirOl(asker);
+  hazirOl(sefa); // yukarı çevrim upcasting
+  hazirOl(ali);  // yukarı çevrim upcasting
+  // polimorfizm nerede ? 
+
+  print("**************");
+  // Late Binding 
+  Asker yeni = Er(); // her er bir asker 
+  // yeni - > er türündeki nesneye bağlanıp onu gösterecektir.
+  hazirOl(yeni);
+  print("**************");
+
+}
+
+//polimorfizm burada - bir çok sınıfta kullanıldı. 
+void hazirOl(Asker asker){
+  asker.selamVer();
+}
+
+class Asker {
+  
+  void selamVer(){
+    print("Asker selam verdi.");
+  }
+}
+
+class Er extends Asker{
+  //override üst sınıftaki özelliğin alt sınıfta tekrar yazılması
+  @override
+  void selamVer() {
+    print("Er selam verdi.");
+  }
+}
+
+class Yuzbasi extends Asker {
+  
+  @override
+  void selamVer() {
+    print("Yüzbaşı selam verdi.");
+  }
+}
