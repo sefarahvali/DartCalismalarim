@@ -1,0 +1,37 @@
+main(List<String> args) {
+  // Sözlük mantığı
+  // Key : Value
+  // v1  : 123
+  // v2  : Sefa
+  // tel : 05xx
+  
+  // object - herhangi bir veri türü gelebilir.
+  Map<String,Object> kisiler = Map();
+  
+  kisiler["Ad"] = "Sefa";
+  kisiler["Yas"] =  25;
+  
+  
+  for(String key in kisiler.keys){
+    print("Key Değeri : ${key}");
+  }
+  
+  print("------------------------");
+  
+  for(Object val in kisiler.values){
+    print("Key Değeri : ${val}");
+  }
+  
+  print("------------------------");
+  
+  kisiler.forEach((anahtar,deger)=>print("Key : $anahtar , Value : $deger"));
+  
+  print("------------------------");
+  
+  kisiler.update("Yas",(deger) => 32) ;
+  
+  kisiler.forEach((anahtar,deger)=>print("Key : $anahtar , Value : $deger"));
+  
+}
+
+
