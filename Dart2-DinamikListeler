@@ -1,0 +1,32 @@
+main(List<String> args) {
+  //Dinamik olarak büyüyen liste
+  List<int> numaralar = List();
+  
+  numaralar.add(5);
+  numaralar.add(25);
+  numaralar.add(45);
+  
+  print('${numaralar[1]}');
+  
+  numaralar[2]=14;
+   print('${numaralar[2]}');
+  print('numaralar : ${numaralar.length}');
+  
+  for(int s in numaralar){
+    print("Elemanları tek tek gösteriyoruz : $s");
+    
+  }
+  
+  
+  print(' ************************* ');
+  //Yeni elemanlar ekleyebildiğimiz dinamik bir liste
+  List<String> sehirler = ["Sakarya","Istanbul","Ankara"];
+  sehirler.add("Van");
+  sehirler.add("Kars");
+  sehirler.add("Rize");
+  
+  for(String a in sehirler){
+    print("Elemanları tek tek gösteriyoruz : $a");
+  }
+}
+
