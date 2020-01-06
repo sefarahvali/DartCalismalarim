@@ -1,0 +1,36 @@
+main(List<String> args) {
+  // Liste gibi belli türdeki verileri bir arada tutmamızı sağlayan yapılar
+  // Set : Küme
+  // Küme yapısı , sadece ayrı türdeki verileri bulundurur.
+  
+  Set<String> isimler = Set();
+  // var isimler = Set();
+  isimler.add("Rıfat");
+  isimler.add("Sefa");
+  isimler.add("Ali");
+  isimler.add("Veli");
+  
+  for(String s in isimler){
+    print("İsim : $s");
+  }
+  
+  //Setlerde sıra yoktur.
+  
+  Set <int> numaralar = Set.from([2,3,1,4,5,5,6,1,2,3,3,34,5,6]);
+  
+  for(int n in numaralar){
+    print("numara : $n");
+  }
+  
+  List<int> ciftSayilarListesi =[0,2,4,6,8,6,4,2,0];
+  
+  numaralar.addAll(ciftSayilarListesi);
+  
+  print("**********");
+  for(int n in numaralar){
+    print("numara : $n");
+  }
+  
+}
+
+
