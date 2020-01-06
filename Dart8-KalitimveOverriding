@@ -1,0 +1,51 @@
+main(List<String> args) {
+  var k1 = Kopek();
+  k1.renk = "Siyah"; 
+  k1.cins = "Labrador";
+  print("Köpeğin rengi : ${k1.renk}");
+  k1.yemekYe();
+  k1.havla();
+
+
+
+}
+
+class Hayvan{
+  String renk;
+  int yas;
+
+  void yemekYe(){
+    print("hayvan yemek yiyor.");
+  }
+}
+
+class Kedi extends Hayvan {
+ 
+  @override //bire bir metot aynı olur sadece içerikleri farklı oluyor.
+  void yemekYe() {
+    print("kedi yemek yiyor");
+    super.yemekYe();
+  }
+
+  void miyavla(){
+    print("miyav");
+  }
+  
+}
+
+class Kopek extends Hayvan{
+  String renk;
+  String cins;
+
+@override
+  void yemekYe() {
+    print("köpek yemek yiyor");
+    // super.yemekYe(); 
+    // super - bir üst sınıfa ulaş onda da yemekye metodunu tetikle diyor.
+  }
+  void havla(){
+    print("hav");
+  }
+
+  
+}
